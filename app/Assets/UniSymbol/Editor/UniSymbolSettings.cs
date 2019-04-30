@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace UniSymbolEditor
 {
-	[CreateAssetMenu( fileName = "UniSymbolSettings", menuName = "UniSymbolSettings" )]
 	public sealed class UniSymbolSettings : ScriptableObject
 	{
 		//==============================================================================
