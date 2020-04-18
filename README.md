@@ -2,16 +2,6 @@
 
 シンボルを簡単に定義できるエディタ拡張
 
-[![](https://img.shields.io/github/release/baba-s/uni-symbol.svg?label=latest%20version)](https://github.com/baba-s/uni-symbol/releases)
-[![](https://img.shields.io/github/release-date/baba-s/uni-symbol.svg)](https://github.com/baba-s/uni-symbol/releases)
-![](https://img.shields.io/badge/Unity-2018.3%2B-red.svg)
-![](https://img.shields.io/badge/.NET-4.x-orange.svg)
-[![](https://img.shields.io/github/license/baba-s/uni-symbol.svg)](https://github.com/baba-s/uni-symbol/blob/master/LICENSE)
-
-## バージョン
-
-- Unity 2018.3.11f1
-
 ## 下準備
 
 - UniSymbol を使用する場合は「Odin」を導入する必要があります  
