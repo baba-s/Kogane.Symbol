@@ -30,8 +30,8 @@ namespace UniSymbolEditor
 		//==============================================================================
 		public UniSymbolTreeView
 		(
-			TreeViewState             state,
-			MultiColumnHeader         header,
+			TreeViewState                state,
+			MultiColumnHeader            header,
 			IReadOnlyList<UniSymbolItem> list
 		) : base( state, header )
 		{
@@ -126,20 +126,20 @@ namespace UniSymbolEditor
 					break;
 				case ColumnType.IS_ENABLE:
 					ordered = m_list
-					          .OrderBy( c => !c.IsEnable )
-					          .ThenBy( c => c.id )
+							.OrderBy( c => !c.IsEnable )
+							.ThenBy( c => c.id )
 						;
 					break;
 				case ColumnType.NAME:
 					ordered = m_list
-					          .OrderBy( c => c.Name )
-					          .ThenBy( c => c.id )
+							.OrderBy( c => c.Name )
+							.ThenBy( c => c.id )
 						;
 					break;
 				case ColumnType.COMMENT:
 					ordered = m_list
-					          .OrderBy( c => c.Comment )
-					          .ThenBy( c => c.id )
+							.OrderBy( c => c.Comment )
+							.ThenBy( c => c.id )
 						;
 					break;
 			}

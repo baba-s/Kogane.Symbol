@@ -15,22 +15,33 @@ namespace UniSymbolEditor
 		//==============================================================================
 		// 変数
 		//==============================================================================
-		private SearchField    m_searchField;
+		private SearchField       m_searchField;
 		private UniSymbolTreeView m_symbolTreeView;
 		private UniSymbolItem[]   m_list;
+		private bool              m_isValid;
+
+		//==============================================================================
+		// プロパティ
+		//==============================================================================
+		public static bool IsUpdate { get; set; }
 
 		//==============================================================================
 		// 関数
 		//==============================================================================
-		private UniSymbolSettings GetSettings() =>
-			AssetDatabase
+		private UniSymbolSettings GetSettings()
+		{
+			return AssetDatabase
 				.FindAssets( "t:UniSymbolSettings" )
 				.Select( AssetDatabase.GUIDToAssetPath )
 				.Select( c => AssetDatabase.LoadAssetAtPath<UniSymbolSettings>( c ) )
 				.FirstOrDefault();
+		}
 
-		[MenuItem( "Window/Uni Symbol" )]
-		private static void Open() => GetWindow<UniSymbolWindow>( "Uni Symbol" );
+		[MenuItem( "Window/UniSymbol" )]
+		public static void Open()
+		{
+			GetWindow<UniSymbolWindow>( "UniSymbol" );
+		}
 
 		private void OnEnable()
 		{
@@ -38,15 +49,18 @@ namespace UniSymbolEditor
 
 			if ( settings == null ) return;
 
+			IsUpdate  = false;
+			m_isValid = true;
+
 			var group = EditorUserBuildSettings.selectedBuildTargetGroup;
 			var enabledSymbols = PlayerSettings
-			                     .GetScriptingDefineSymbolsForGroup( group )
-			                     .Split( ';' );
+				.GetScriptingDefineSymbolsForGroup( group )
+				.Split( ';' );
 
 			m_list = settings.List
-			                 .Select( ( val, index ) => new UniSymbolItem( index + 1, val, enabledSymbols ) )
-			                 .DefaultIfEmpty( new UniSymbolItem( 0, null, enabledSymbols ) )
-			                 .ToArray();
+				.Select( ( val, index ) => new UniSymbolItem( index + 1, val, enabledSymbols ) )
+				.DefaultIfEmpty( new UniSymbolItem( 0, null, enabledSymbols ) )
+				.ToArray();
 
 			var state  = new TreeViewState();
 			var header = new UniSymbolHeader( null );
@@ -62,6 +76,23 @@ namespace UniSymbolEditor
 
 		private void OnGUI()
 		{
+			if ( !m_isValid )
+			{
+				if ( GUILayout.Button( "Create Settings File" ) )
+				{
+					var settings = CreateInstance<UniSymbolSettings>();
+					AssetDatabase.CreateAsset( settings, "Assets/UniSymbolSettings.asset" );
+					OnEnable();
+				}
+
+				return;
+			}
+
+			if ( IsUpdate )
+			{
+				OnEnable();
+			}
+
 			var enabled = GUI.enabled;
 			GUI.enabled = !EditorApplication.isCompiling && !EditorApplication.isPlaying;
 
@@ -95,18 +126,22 @@ namespace UniSymbolEditor
 				if ( GUILayout.Button( "Setting", EditorStyles.toolbarButton ) )
 				{
 					var settings = GetSettings();
+					if ( settings == null ) return;
 					EditorGUIUtility.PingObject( settings );
 					Selection.activeObject = settings;
 				}
 
 				using ( var checkScope = new EditorGUI.ChangeCheckScope() )
 				{
-					var searchString = m_searchField.OnToolbarGUI( m_symbolTreeView.searchString );
-
-					if ( checkScope.changed )
+					if ( m_symbolTreeView != null )
 					{
-						SessionState.SetString( SEARCH_STRING_STATE_KEY, searchString );
-						m_symbolTreeView.searchString = searchString;
+						var searchString = m_searchField.OnToolbarGUI( m_symbolTreeView.searchString );
+
+						if ( checkScope.changed )
+						{
+							SessionState.SetString( SEARCH_STRING_STATE_KEY, searchString );
+							m_symbolTreeView.searchString = searchString;
+						}
 					}
 				}
 			}
