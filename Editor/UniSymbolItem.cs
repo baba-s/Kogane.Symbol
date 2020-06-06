@@ -2,9 +2,9 @@
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
-namespace UniSymbolEditor
+namespace Kogane.Internal
 {
-	public sealed class UniSymbolItem : TreeViewItem
+	internal sealed class UniSymbolItem : TreeViewItem
 	{
 		//==============================================================================
 		// 変数

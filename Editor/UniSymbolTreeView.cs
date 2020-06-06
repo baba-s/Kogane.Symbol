@@ -4,9 +4,9 @@ using UnityEditor;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
-namespace UniSymbolEditor
+namespace Kogane.Internal
 {
-	public sealed class UniSymbolTreeView : TreeView
+	internal sealed class UniSymbolTreeView : TreeView
 	{
 		//==============================================================================
 		// 列挙型

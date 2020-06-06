@@ -1,9 +1,9 @@
 ﻿using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
-namespace UniSymbolEditor
+namespace Kogane.Internal
 {
-	public sealed class UniSymbolHeader : MultiColumnHeader
+	internal sealed class UniSymbolHeader : MultiColumnHeader
 	{
 		//==============================================================================
 		// 関数

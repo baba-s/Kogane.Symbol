@@ -3,9 +3,9 @@ using UnityEditor;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
-namespace UniSymbolEditor
+namespace Kogane.Internal
 {
-	public sealed class UniSymbolWindow : EditorWindow
+	internal sealed class UniSymbolWindow : EditorWindow
 	{
 		//==============================================================================
 		// 定数(const)
