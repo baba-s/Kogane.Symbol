@@ -31,7 +31,7 @@ namespace Kogane.Internal
 		private UniSymbolSettings GetSettings()
 		{
 			return AssetDatabase
-				.FindAssets( "t:UniSymbolSettings" )
+				.FindAssets( $"t:{nameof( UniSymbolSettings )}" )
 				.Select( AssetDatabase.GUIDToAssetPath )
 				.Select( c => AssetDatabase.LoadAssetAtPath<UniSymbolSettings>( c ) )
 				.FirstOrDefault();
