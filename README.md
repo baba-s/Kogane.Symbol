@@ -2,11 +2,6 @@
 
 シンボルを簡単に定義できるエディタ拡張
 
-## 下準備
-
-- UniSymbol を使用する場合は「Odin」を導入する必要があります  
-https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041  
-
 ## 使用例
 
 ![](https://cdn-ak.f.st-hatena.com/images/fotolife/b/baba_s/20190430/20190430162632.png)
