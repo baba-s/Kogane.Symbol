@@ -91,7 +91,10 @@ namespace Kogane.Internal
 						EditorGUI.LabelField( rect, item.Comment, labelStyle );
 						break;
 					case ColumnType.COPY:
-						GUI.Button( rect, "copy", EditorStyles.miniButton );
+						if ( GUI.Button( rect, "copy", EditorStyles.miniButton ) )
+						{
+							EditorGUIUtility.systemCopyBuffer = item.Name;
+						}
 						break;
 				}
 
