@@ -28,6 +28,7 @@ namespace Kogane.Internal
 
 			m_reorderableList = new ReorderableList( serializedObject, m_property )
 			{
+				onAddCallback       = OnAdd,
 				drawElementCallback = OnDrawElement,
 			};
 		}
@@ -39,6 +40,25 @@ namespace Kogane.Internal
 		{
 			m_property        = null;
 			m_reorderableList = null;
+		}
+
+		/// <summary>
+		/// 要素を追加する時に呼び出されます
+		/// </summary>
+		private void OnAdd( ReorderableList list )
+		{
+			var index = m_property.arraySize;
+
+			m_property.InsertArrayElementAtIndex( index );
+
+			var property        = m_property.GetArrayElementAtIndex( index );
+			var nameProperty    = property.FindPropertyRelative( "m_name" );
+			var commentProperty = property.FindPropertyRelative( "m_comment" );
+			var colorProperty   = property.FindPropertyRelative( "m_color" );
+
+			nameProperty.stringValue    = string.Empty;
+			commentProperty.stringValue = string.Empty;
+			colorProperty.colorValue    = Color.white;
 		}
 
 		/// <summary>

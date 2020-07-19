@@ -22,6 +22,8 @@ namespace Kogane.Internal
 		//==============================================================================
 		// 変数(SerializeField)
 		//==============================================================================
+		// ReorderableList で要素を追加する時はここに指定した初期値は無視される
+		// ReorderableList.onAddCallback で初期値を指定する必要がある
 		[SerializeField] private string m_name    = default;
 		[SerializeField] private string m_comment = default;
 		[SerializeField] private Color  m_color   = Color.white;
