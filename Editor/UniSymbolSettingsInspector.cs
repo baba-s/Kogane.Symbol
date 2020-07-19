@@ -29,6 +29,7 @@ namespace Kogane.Internal
 			m_reorderableList = new ReorderableList( serializedObject, m_property )
 			{
 				onAddCallback       = OnAdd,
+				onChangedCallback   = OnChanged,
 				drawElementCallback = OnDrawElement,
 			};
 		}
@@ -59,6 +60,14 @@ namespace Kogane.Internal
 			nameProperty.stringValue    = string.Empty;
 			commentProperty.stringValue = string.Empty;
 			colorProperty.colorValue    = Color.white;
+		}
+
+		/// <summary>
+		/// 要素が変更された時に呼び出されます
+		/// </summary>
+		private void OnChanged( ReorderableList list )
+		{
+			UniSymbolWindow.IsUpdate = true;
 		}
 
 		/// <summary>
