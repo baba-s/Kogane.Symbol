@@ -1,20 +1,28 @@
-﻿using UnityEditor;
+﻿using Kogane.Internal;
+using System;
+using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace Kogane.Internal
+namespace Kogane
 {
 	/// <summary>
 	/// UniSymbolSettings の Inspector の表示を変更するエディタ拡張
 	/// </summary>
 	[CustomEditor( typeof( UniSymbolSettings ) )]
-	internal sealed class UniSymbolSettingsInspector : Editor
+	public sealed class UniSymbolSettingsInspector : Editor
 	{
 		//==============================================================================
 		// 変数
 		//==============================================================================
 		private SerializedProperty m_property;
 		private ReorderableList    m_reorderableList;
+
+		//==============================================================================
+		// デリゲート(static)
+		//==============================================================================
+		public static Action<UniSymbolSettings> OnHeaderGUI { get; set; }
+		public static Action<UniSymbolSettings> OnFooterGUI { get; set; }
 
 		//==============================================================================
 		// 関数
@@ -92,6 +100,10 @@ namespace Kogane.Internal
 		/// </summary>
 		public override void OnInspectorGUI()
 		{
+			var settings = ( UniSymbolSettings ) target;
+
+			OnHeaderGUI?.Invoke( settings );
+
 			if ( GUILayout.Button( "Open UniSymbol" ) )
 			{
 				UniSymbolWindow.Open();
@@ -99,6 +111,9 @@ namespace Kogane.Internal
 
 			serializedObject.Update();
 			m_reorderableList.DoLayoutList();
+			
+			OnFooterGUI?.Invoke( settings );
+
 			serializedObject.ApplyModifiedProperties();
 		}
 	}

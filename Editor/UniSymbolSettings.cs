@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Kogane.Internal
+namespace Kogane
 {
-	internal sealed class UniSymbolSettings : ScriptableObject
+	public sealed class UniSymbolSettings : ScriptableObject
 	{
 		//==============================================================================
 		// 変数(SerializeField)
