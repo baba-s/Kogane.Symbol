@@ -12,11 +12,11 @@ Unity メニューの「Window > Kogane > Symbol」を選択すると
 
 シンボルを設定できるウィンドウが表示されるので「Setting」を押します
 
-![2022-08-28_110846](https://user-images.githubusercontent.com/6134875/187054517-9b2633b8-9b51-467f-974f-2cf1d75c9c98.png)
+![2022-08-28_111348](https://user-images.githubusercontent.com/6134875/187054561-6920d9de-61f4-4350-a249-bca2cec53638.png)
 
 Project Settings が表示されたら
 
-![2022-08-28_111022](https://user-images.githubusercontent.com/6134875/187054519-e591f4c2-f1a2-4bb5-bb6b-37506a1f8754.png)
+![2022-08-28_111329](https://user-images.githubusercontent.com/6134875/187054562-e01a069e-dd6c-4f3b-8eeb-0fb4d26a645a.png)
 
 使用したいシンボルを追加します
 
@@ -27,8 +27,3 @@ Project Settings が表示されたら
 ![2022-08-28_111047](https://user-images.githubusercontent.com/6134875/187054523-07c3d538-8c82-4911-8e68-9d64046bc34d.png)
 
 有効化したいシンボルをチェックして「Save」ボタンを押します
-
-## 謝辞
-
-- UniSymbol は下記のリポジトリを参考にさせていただきました  
-  https://github.com/anchan828/texture-tree-view-sample  
