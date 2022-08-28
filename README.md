@@ -4,31 +4,27 @@
 
 ## 使い方
 
-![2020-07-16_140601](https://user-images.githubusercontent.com/6134875/87629539-318ee600-c76e-11ea-961b-f3a11f3d7e4a.png)
+![2022-08-28_110733](https://user-images.githubusercontent.com/6134875/187054508-bdba7f60-ae2d-4939-a93c-e6fde0592146.png)
 
 Unity メニューの「Window > Kogane > Symbol」を選択すると
 
-![2020-07-16_140626](https://user-images.githubusercontent.com/6134875/87629540-32277c80-c76e-11ea-9b41-0db752a0ff2e.png)
+![2022-08-28_110821](https://user-images.githubusercontent.com/6134875/187054510-e6be342c-a486-444d-b925-10c5ec541b5a.png)
 
-シンボルを設定できるウィンドウが表示されるので
+シンボルを設定できるウィンドウが表示されるので「Setting」を押します
 
-![2020-07-16_140711](https://user-images.githubusercontent.com/6134875/87629542-32c01300-c76e-11ea-86fb-574b8d16993d.png)
-
-「Setting」を押します
-
-![2020-07-16_140747](https://user-images.githubusercontent.com/6134875/87629544-32c01300-c76e-11ea-938b-a30ddfa772cc.png)
+![2022-08-28_110846](https://user-images.githubusercontent.com/6134875/187054517-9b2633b8-9b51-467f-974f-2cf1d75c9c98.png)
 
 Project Settings が表示されたら
 
-![2020-07-16_140933](https://user-images.githubusercontent.com/6134875/87629550-35bb0380-c76e-11ea-8ab8-b949af454892.png)
+![2022-08-28_111022](https://user-images.githubusercontent.com/6134875/187054519-e591f4c2-f1a2-4bb5-bb6b-37506a1f8754.png)
 
 使用したいシンボルを追加します
 
-![2020-07-16_141015](https://user-images.githubusercontent.com/6134875/87629551-36539a00-c76e-11ea-8068-c3d0543e8e85.png)
+![2022-08-28_111036](https://user-images.githubusercontent.com/6134875/187054521-21b08bd7-a59c-4b09-ba77-a1c99d29ac83.png)
 
 すると、Symbol ウィンドウでシンボルの有効・無効を変更できるようになるので
 
-![2020-07-16_141034](https://user-images.githubusercontent.com/6134875/87629552-36539a00-c76e-11ea-9beb-24689b730d82.png)
+![2022-08-28_111047](https://user-images.githubusercontent.com/6134875/187054523-07c3d538-8c82-4911-8e68-9d64046bc34d.png)
 
 有効化したいシンボルをチェックして「Save」ボタンを押します
 
