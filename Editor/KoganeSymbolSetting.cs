@@ -10,7 +10,7 @@ namespace Kogane
         //==============================================================================
         // 変数(SerializeField)
         //==============================================================================
-        [SerializeField] private KoganeSymbolParam[] m_list = new KoganeSymbolParam[ 0 ];
+        [SerializeField] private KoganeSymbolParam[] m_list = Array.Empty<KoganeSymbolParam>();
 
         //==============================================================================
         // プロパティ
