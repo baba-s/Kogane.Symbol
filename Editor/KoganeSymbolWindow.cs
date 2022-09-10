@@ -32,7 +32,7 @@ namespace Kogane.Internal
             return KoganeSymbolSetting.instance;
         }
 
-        [MenuItem( "Window/Kogane/Symbol" )]
+        [MenuItem( "Window/Kogane/Symbol", false, 1684154999 )]
         public static void Open()
         {
             GetWindow<KoganeSymbolWindow>( "Symbol" );
