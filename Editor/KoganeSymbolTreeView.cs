@@ -73,8 +73,12 @@ namespace Kogane.Internal
                 var rect        = args.GetCellRect( i );
                 var columnIndex = ( ColumnType )args.GetColumn( i );
 
-                var color = GUI.color;
-                GUI.color = item.Color;
+                var oldColor = GUI.color;
+                var color    = item.Color;
+
+                color.a = 1;
+
+                GUI.color = color;
 
                 switch ( columnIndex )
                 {
@@ -99,7 +103,7 @@ namespace Kogane.Internal
                         break;
                 }
 
-                GUI.color = color;
+                GUI.color = oldColor;
             }
         }
 
