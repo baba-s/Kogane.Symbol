@@ -49,18 +49,18 @@ namespace Kogane.Internal
 
             m_list = settings.List
                 .Select( ( val, index ) => new KoganeSymbolItem( index + 1, val, enabledSymbols ) )
-                .DefaultIfEmpty( new KoganeSymbolItem( 0, null, enabledSymbols ) )
+                .DefaultIfEmpty( new( 0, null, enabledSymbols ) )
                 .ToArray();
 
             var state  = new TreeViewState();
             var header = new KoganeSymbolHeader( null );
 
-            m_symbolTreeView = new KoganeSymbolTreeView( state, header, m_list )
+            m_symbolTreeView = new( state, header, m_list )
             {
                 searchString = SessionState.GetString( SEARCH_STRING_STATE_KEY, string.Empty )
             };
 
-            m_searchField                         =  new SearchField();
+            m_searchField                         =  new();
             m_searchField.downOrUpArrowKeyPressed += m_symbolTreeView.SetFocusAndEnsureSelectedItem;
         }
 

@@ -18,7 +18,7 @@ namespace Kogane.Internal
                 width               = nonTitleColumnWidth,
                 minWidth            = nonTitleColumnWidth,
                 maxWidth            = nonTitleColumnWidth,
-                headerContent       = new GUIContent( string.Empty ),
+                headerContent       = new( string.Empty ),
                 headerTextAlignment = TextAlignment.Center,
             };
 
@@ -26,7 +26,7 @@ namespace Kogane.Internal
             {
                 new MultiColumnHeaderState.Column
                 {
-                    headerContent       = new GUIContent( "No" ),
+                    headerContent       = new( "No" ),
                     headerTextAlignment = TextAlignment.Center,
                     width               = 24,
                     maxWidth            = 24,
@@ -34,12 +34,12 @@ namespace Kogane.Internal
                 nonTitleColumn,
                 new MultiColumnHeaderState.Column
                 {
-                    headerContent       = new GUIContent( "Name" ),
+                    headerContent       = new( "Name" ),
                     headerTextAlignment = TextAlignment.Center,
                 },
                 new MultiColumnHeaderState.Column
                 {
-                    headerContent       = new GUIContent( "Comment" ),
+                    headerContent       = new( "Comment" ),
                     headerTextAlignment = TextAlignment.Center,
                 },
                 new MultiColumnHeaderState.Column
@@ -47,12 +47,12 @@ namespace Kogane.Internal
                     width               = copyColumnWidth,
                     minWidth            = copyColumnWidth,
                     maxWidth            = copyColumnWidth,
-                    headerContent       = new GUIContent( "Copy" ),
+                    headerContent       = new( "Copy" ),
                     headerTextAlignment = TextAlignment.Center,
                 },
             };
 
-            this.state = new MultiColumnHeaderState( columns );
+            this.state = new( columns );
         }
     }
 }
