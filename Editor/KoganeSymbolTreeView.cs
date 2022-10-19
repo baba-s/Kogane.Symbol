@@ -89,7 +89,7 @@ namespace Kogane.Internal
                         item.IsEnable = EditorGUI.Toggle( rect, item.IsEnable );
                         break;
                     case ColumnType.NAME:
-                        EditorGUI.SelectableLabel( rect, item.Name, labelStyle );
+                        EditorGUI.LabelField( rect, item.Name, labelStyle );
                         break;
                     case ColumnType.COMMENT:
                         EditorGUI.LabelField( rect, item.Comment, labelStyle );
@@ -105,6 +105,18 @@ namespace Kogane.Internal
 
                 GUI.color = oldColor;
             }
+        }
+
+        protected override void SingleClickedItem( int id )
+        {
+            var item = m_list.First( x => x.id == id );
+            item.IsEnable = !item.IsEnable;
+        }
+
+        protected override void DoubleClickedItem( int id )
+        {
+            var item = m_list.First( x => x.id == id );
+            item.IsEnable = !item.IsEnable;
         }
 
         protected override bool DoesItemMatchSearch( TreeViewItem treeViewItem, string search )
