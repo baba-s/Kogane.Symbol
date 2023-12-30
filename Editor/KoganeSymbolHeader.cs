@@ -5,9 +5,9 @@ namespace Kogane.Internal
 {
     internal sealed class KoganeSymbolHeader : MultiColumnHeader
     {
-        //==============================================================================
+        //================================================================================
         // 関数
-        //==============================================================================
+        //================================================================================
         public KoganeSymbolHeader( MultiColumnHeaderState state ) : base( state )
         {
             const int nonTitleColumnWidth = 18;
